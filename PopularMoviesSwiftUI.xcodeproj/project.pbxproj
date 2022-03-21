@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9C0583A927E80C1C005681EF /* Repository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C0583A827E80C1C005681EF /* Repository.swift */; };
 		9CECD47F27E7E8F300EC352B /* PopularMoviesSwiftUIApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CECD47E27E7E8F300EC352B /* PopularMoviesSwiftUIApp.swift */; };
 		9CECD48127E7E8F300EC352B /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CECD48027E7E8F300EC352B /* ContentView.swift */; };
 		9CECD48327E7E8F400EC352B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9CECD48227E7E8F400EC352B /* Assets.xcassets */; };
@@ -15,12 +16,15 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		9C0583A827E80C1C005681EF /* Repository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Repository.swift; sourceTree = "<group>"; };
 		9CECD47B27E7E8F300EC352B /* PopularMoviesSwiftUI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PopularMoviesSwiftUI.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9CECD47E27E7E8F300EC352B /* PopularMoviesSwiftUIApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopularMoviesSwiftUIApp.swift; sourceTree = "<group>"; };
 		9CECD48027E7E8F300EC352B /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		9CECD48227E7E8F400EC352B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9CECD48527E7E8F400EC352B /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		9CECD48C27E7E99D00EC352B /* MovieViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieViewModel.swift; sourceTree = "<group>"; };
+		9CECD48F27E7FBE200EC352B /* Secrets.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Secrets.xcconfig; sourceTree = "<group>"; };
+		9CECD49027E7FE3F00EC352B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,10 +57,13 @@
 		9CECD47D27E7E8F300EC352B /* PopularMoviesSwiftUI */ = {
 			isa = PBXGroup;
 			children = (
+				9CECD49027E7FE3F00EC352B /* Info.plist */,
 				9CECD47E27E7E8F300EC352B /* PopularMoviesSwiftUIApp.swift */,
 				9CECD48027E7E8F300EC352B /* ContentView.swift */,
 				9CECD48C27E7E99D00EC352B /* MovieViewModel.swift */,
+				9C0583A827E80C1C005681EF /* Repository.swift */,
 				9CECD48227E7E8F400EC352B /* Assets.xcassets */,
+				9CECD48F27E7FBE200EC352B /* Secrets.xcconfig */,
 				9CECD48427E7E8F400EC352B /* Preview Content */,
 			);
 			path = PopularMoviesSwiftUI;
@@ -143,6 +150,7 @@
 				9CECD48127E7E8F300EC352B /* ContentView.swift in Sources */,
 				9CECD47F27E7E8F300EC352B /* PopularMoviesSwiftUIApp.swift in Sources */,
 				9CECD48D27E7E99D00EC352B /* MovieViewModel.swift in Sources */,
+				9C0583A927E80C1C005681EF /* Repository.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -265,6 +273,7 @@
 		};
 		9CECD48A27E7E8F400EC352B /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9CECD48F27E7FBE200EC352B /* Secrets.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -274,6 +283,8 @@
 				DEVELOPMENT_TEAM = TR424VG3F8;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = PopularMoviesSwiftUI/Info.plist;
+				INFOPLIST_KEY_LSApplicationCategoryType = "";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -294,6 +305,7 @@
 		};
 		9CECD48B27E7E8F400EC352B /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9CECD48F27E7FBE200EC352B /* Secrets.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -303,6 +315,8 @@
 				DEVELOPMENT_TEAM = TR424VG3F8;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = PopularMoviesSwiftUI/Info.plist;
+				INFOPLIST_KEY_LSApplicationCategoryType = "";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;

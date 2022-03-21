@@ -8,7 +8,15 @@
 import SwiftUI
 
 struct ContentView: View {
-    @StateObject var viewModel = MovieViewModel()
+    @StateObject var viewModel: MovieViewModel
+
+    init() {
+        self._viewModel = StateObject(wrappedValue: MovieViewModel())
+    }
+
+    init(viewModel: MovieViewModel) {
+        self._viewModel = StateObject(wrappedValue: viewModel)
+    }
 
     var body: some View {
         NavigationView {
@@ -24,7 +32,22 @@ struct ContentView: View {
 }
 
 struct ContentView_Previews: PreviewProvider {
+    static var movies = [
+        Movie(title: "Matrix",
+              overview: "",
+              posterPath: "",
+              releaseDate: ""),
+        Movie(title: "Lord of the Rings",
+              overview: "",
+              posterPath: "",
+              releaseDate: ""),
+        Movie(title: "Avengers",
+              overview: "",
+              posterPath: "",
+              releaseDate: ""),
+    ]
+
     static var previews: some View {
-        ContentView(viewModel: MovieViewModel())
+        ContentView(viewModel: MovieViewModel(movies: movies))
     }
 }

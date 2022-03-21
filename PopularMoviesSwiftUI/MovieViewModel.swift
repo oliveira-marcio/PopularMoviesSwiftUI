@@ -1,33 +1,33 @@
 import Foundation
 import SwiftUI
 
-struct Movie: Hashable, Codable {
-    var title: String
+struct Movie: Hashable {
+    let title: String
+    let overview: String
+    let posterPath: String
+    let releaseDate: String
+
+    init(title: String,
+         overview: String,
+         posterPath: String,
+         releaseDate: String) {
+        self.title = title
+        self.overview = overview
+        self.posterPath = posterPath
+        self.releaseDate = releaseDate
+    }
 }
 
-class MovieViewModel: ObservableObject {
+@MainActor class MovieViewModel: ObservableObject {
     @Published var movies = [Movie]()
 
     init() {
-        fetchMovies()
+        Task {
+            movies = try await Repository.shared.fetchMovies()
+        }
     }
 
-    private func fetchMovies() {
-        let jsonData = """
-        [
-            { "title": "Matrix" },
-            { "title": "Avengers" },
-            { "title": "Lord of the Rings" },
-            { "title": "Hancock" }
-        ]
-        """.data(using: .utf8)!
-
-        let decoder = JSONDecoder()
-        decoder.keyDecodingStrategy = .convertFromSnakeCase
-        decoder.dateDecodingStrategy = .iso8601
-
-        if let movies = try? decoder.decode([Movie].self, from: jsonData) {
-            self.movies = movies
-        }
+    init(movies: [Movie]) {
+        self.movies = movies
     }
 }

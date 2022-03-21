@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		9C0583A927E80C1C005681EF /* Repository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C0583A827E80C1C005681EF /* Repository.swift */; };
+		9C0583AB27E8FA98005681EF /* NetworkImageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C0583AA27E8FA98005681EF /* NetworkImageViewModel.swift */; };
 		9CECD47F27E7E8F300EC352B /* PopularMoviesSwiftUIApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CECD47E27E7E8F300EC352B /* PopularMoviesSwiftUIApp.swift */; };
 		9CECD48127E7E8F300EC352B /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CECD48027E7E8F300EC352B /* ContentView.swift */; };
 		9CECD48327E7E8F400EC352B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9CECD48227E7E8F400EC352B /* Assets.xcassets */; };
@@ -17,6 +18,7 @@
 
 /* Begin PBXFileReference section */
 		9C0583A827E80C1C005681EF /* Repository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Repository.swift; sourceTree = "<group>"; };
+		9C0583AA27E8FA98005681EF /* NetworkImageViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkImageViewModel.swift; sourceTree = "<group>"; };
 		9CECD47B27E7E8F300EC352B /* PopularMoviesSwiftUI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PopularMoviesSwiftUI.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9CECD47E27E7E8F300EC352B /* PopularMoviesSwiftUIApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopularMoviesSwiftUIApp.swift; sourceTree = "<group>"; };
 		9CECD48027E7E8F300EC352B /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -61,6 +63,7 @@
 				9CECD47E27E7E8F300EC352B /* PopularMoviesSwiftUIApp.swift */,
 				9CECD48027E7E8F300EC352B /* ContentView.swift */,
 				9CECD48C27E7E99D00EC352B /* MovieViewModel.swift */,
+				9C0583AA27E8FA98005681EF /* NetworkImageViewModel.swift */,
 				9C0583A827E80C1C005681EF /* Repository.swift */,
 				9CECD48227E7E8F400EC352B /* Assets.xcassets */,
 				9CECD48F27E7FBE200EC352B /* Secrets.xcconfig */,
@@ -151,6 +154,7 @@
 				9CECD47F27E7E8F300EC352B /* PopularMoviesSwiftUIApp.swift in Sources */,
 				9CECD48D27E7E99D00EC352B /* MovieViewModel.swift in Sources */,
 				9C0583A927E80C1C005681EF /* Repository.swift in Sources */,
+				9C0583AB27E8FA98005681EF /* NetworkImageViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

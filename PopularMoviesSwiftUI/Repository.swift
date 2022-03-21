@@ -15,7 +15,7 @@ extension Movie {
     init(from entity: MovieEntity) {
         self.init(title: entity.title,
                   overview: entity.overview,
-                  posterPath: "http://image.tmdb.org/t/p/w500\(entity.posterPath)",
+                  posterPath: "https://image.tmdb.org/t/p/w500\(entity.posterPath)",
                   releaseDate: entity.releaseDate)
     }
 }
@@ -37,6 +37,11 @@ class Repository {
 
         let movies = try decoder.decode(MoviesEntity.self, from: data)
         return movies.results.map { Movie(from: $0) }
+    }
+
+    func fetchPoster(from urlString: String) async throws -> Data {
+        let request = URLRequest(url: URL(string: urlString)!)
+        return try await URLSession.shared.data(for: request).0
     }
 
     private func getApiKey() -> String {

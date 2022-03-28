@@ -5,7 +5,6 @@ struct MovieDetailsView: View {
 
     init(movie: Movie) {
         self.movie = movie
-//        UITableView.appearance().backgroundColor = .systemBackground
     }
 
     var body: some View {

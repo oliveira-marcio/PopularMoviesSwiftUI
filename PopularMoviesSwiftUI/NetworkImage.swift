@@ -26,15 +26,13 @@ struct NetworkImage: View {
                 .aspectRatio(contentMode: .fit)
                 .frame(width: width, height: height)
                 .background(Color.gray)
-                .onAppear() {
-                    fetchPoster()
+                .task {
+                    await fetchPoster()
                 }
         }
     }
 
-    private func fetchPoster() {
-        Task {
-            imageData = try await Repository.shared.fetchPoster(from: urlString)
-        }
+    private func fetchPoster() async {
+        imageData = try? await Repository.shared.fetchPoster(from: urlString)
     }
 }

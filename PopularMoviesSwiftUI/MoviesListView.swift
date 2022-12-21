@@ -29,6 +29,8 @@ struct MoviesListView: View {
             }
             .listStyle(PlainListStyle())
             .navigationTitle("Movies")
+        }.task {
+            await viewModel.getMovies()
         }
     }
 }

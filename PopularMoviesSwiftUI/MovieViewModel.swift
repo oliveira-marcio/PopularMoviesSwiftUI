@@ -19,15 +19,20 @@ struct Movie: Hashable {
 }
 
 @MainActor class MovieViewModel: ObservableObject {
-    @Published var movies = [Movie]()
+    @Published var movies: [Movie]
 
     init() {
-        Task {
-            movies = try await Repository.shared.fetchMovies()
-        }
+        movies = []
     }
 
     init(movies: [Movie]) {
+        self.movies = movies
+    }
+
+    func getMovies() async {
+        guard movies.isEmpty,
+              let movies = try? await Repository.shared.fetchMovies()
+        else { return }
         self.movies = movies
     }
 }

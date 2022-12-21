@@ -39,11 +39,6 @@ class Repository {
         return movies.results.map { Movie(from: $0) }
     }
 
-    func fetchPoster(from urlString: String) async throws -> Data {
-        let request = URLRequest(url: URL(string: urlString)!)
-        return try await URLSession.shared.data(for: request).0
-    }
-
     private func getApiKey() -> String {
         guard let dict = Bundle.main.infoDictionary, let apiKey = dict["movies_api_key"] as? String else {
             fatalError("Configuration Plist file not found.")

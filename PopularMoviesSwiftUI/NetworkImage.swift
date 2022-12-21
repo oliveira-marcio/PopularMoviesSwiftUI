@@ -5,8 +5,6 @@ struct NetworkImage: View {
     let width: CGFloat
     let height: CGFloat
 
-    @State var imageData: Data?
-
     init(urlString: String, width: CGFloat, height: CGFloat) {
         self.urlString = urlString
         self.width = width
@@ -14,25 +12,16 @@ struct NetworkImage: View {
     }
 
     var body: some View {
-        if let imageData = imageData,
-            let uiImage = UIImage(data: imageData) {
-            Image(uiImage: uiImage)
+        AsyncImage(url: URL(string: urlString)) { image in
+            image
                 .resizable()
                 .aspectRatio(contentMode: .fit)
-                .frame(width: width, height: height)
-        } else {
+        } placeholder: {
             Image(systemName: "video")
                 .resizable()
                 .aspectRatio(contentMode: .fit)
                 .frame(width: width, height: height)
                 .background(Color.gray)
-                .task {
-                    await fetchPoster()
-                }
-        }
-    }
-
-    private func fetchPoster() async {
-        imageData = try? await Repository.shared.fetchPoster(from: urlString)
+        }.frame(width: width, height: height)
     }
 }
